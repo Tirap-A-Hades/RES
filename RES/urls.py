@@ -17,7 +17,7 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from django.views.generic import TemplateView
 from rest_framework.routers import SimpleRouter
 
@@ -36,9 +36,10 @@ urlpatterns = [
     path('reestr/', real_estate_card.views.reestr, name='reestr'),
     path('estates/update', real_estate_card.views.object_update, name='object_edit'),
     path('estates/create', real_estate_card.views.objectcard, name='object_create'),
-    path('reg/', RegisterView.as_view(), name='register'),
+    path('users/reg/', RegisterView.as_view(), name='register'),
     path('support/', users.views.support, name='support'),
     path('estate/1/', real_estate_card.views.estate_card, name='estate'),
+    path('users/', include('users.urls'), name='estate'),
 ]
 
 urlpatterns += router.urls
