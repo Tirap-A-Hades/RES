@@ -1,43 +1,6 @@
 from django.db import models
 
 
-class RealEstateOwner(models.Model):
-    first_name = models.CharField(max_length=255, verbose_name='имя')
-    last_name = models.CharField(max_length=255, verbose_name='фамилия')
-    surname = models.CharField(max_length=255, verbose_name='отчество')
-
-    passport = models.CharField(max_length=10, unique=True, verbose_name='паспорт')
-
-    def get_full_name(self):
-        return self.first_name + ' ' + self.last_name + ' ' + self.surname
-
-    def __str__(self):
-        return f'{self.passport}: {self.get_full_name()}'
-
-    class Meta:
-        verbose_name = "Владелец"
-        verbose_name_plural = "Владельцы"
-
-
-class RealEstateActualUser(models.Model):
-    first_name = models.CharField(max_length=255, verbose_name='имя')
-    last_name = models.CharField(max_length=255, verbose_name='фамилия')
-    surname = models.CharField(max_length=255, verbose_name='отчество')
-
-    #passport = models.CharField(max_length=10, unique=True)
-
-    def get_full_name(self):
-        return self.first_name + ' ' + self.last_name + ' ' + self.surname
-
-    def __str__(self):
-        #return f'{self.passport}: {self.get_full_name()}'
-        return self.get_full_name()
-
-    class Meta:
-        verbose_name = "Фактиечский пользовтаель"
-        verbose_name_plural = "Фактические пользователи"
-
-
 class RealEstate(models.Model):
     STATES = (
         ('new', 'новый'),
@@ -60,9 +23,13 @@ class RealEstate(models.Model):
     #площадь объекта в кв.м.
     square = models.FloatField(verbose_name='площадь (кв.м.)')
 
+    #Кадастр
+    cadastral_number = models.CharField(verbose_name='кадастровый номер', blank=True, null=True)
+    cadastral_price = models.FloatField(verbose_name='кадастровая стоимость', blank=True, null=True)
+
     #владелец и фактический пользователь
-    owner = models.ForeignKey(RealEstateOwner, on_delete=models.PROTECT, verbose_name='владелец')
-    actual_user = models.ForeignKey(RealEstateActualUser, on_delete=models.PROTECT, verbose_name='фактический пользователь')
+    owner = models.CharField(max_length=255, verbose_name='владелец')
+    actual_user = models.CharField(max_length=255, verbose_name='пользователь')
 
     def __str__(self):
         return f'{self.id}: {self.address}'

@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+
+{% block title %}Реестр{% endblock %}
+
+{% block content %}
+
+    <div class="container-fluid pt-5"></div>
+    <div class="container"><h3>Список объектов</h3></div>
+    <div class="container-fluid pt-5"></div>
+
+<div class="container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>город Москва, с/о Новоивановский, д. Сколково, уч. 25-Л</th>
+          <th>Земельный участок</th>
+          <th>50:20:0020106:567</th>
+          <th>
+            <a class="btn btn-danger" role="button" href="{% url 'estate' %}">
+              Подробнее
+            </a>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- <tr>
+          <th>город Москва, проезд Сигнальный, д. 20</th>
+          <th>Земельный участок</th>
+          <th>77:02:0009004:11</th>
+          <th>
+            <button type="button" class="btn btn-danger">
+              Подробнее
+            </button> 
+          </th>
+        </tr>
+
+
+        <tr>
+          <th>"Большая Сибирская гостиница" Н.Д.Стахеева, 1900 г., архитектор М.Ф.Бугоровский. Здесь в 1926 году жил писатель А.П.Платонов</th>
+          <th>Памятник</th>
+          <th>771410339220005</th>
+          <th>
+            <button type="button" class="btn btn-danger">
+              Подробнее
+            </button>
+          </th>
+        </tr>
+
+
+        <tr>
+          <th>"Большая Сибирская гостиница" Н.Д.Стахеева, 1900 г., архитектор М.Ф.Бугоровский. Здесь в 1926 году жил писатель А.П.Платонов</th>
+          <th>Памятник</th>
+          <th>771410339220005</th>
+          <th>
+            <button type="button" class="btn btn-danger">
+              Подробнее
+            </button>
+          </th>
+        </tr> -->
+      </tbody>
+    </table>
+    </div>
+
+
+<!-- окно
+<div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Описание объекта</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <p><h6>Адрес:</h6> г. Москва, Златоустинский Б. пер., дом 6, строение 1</p>
+        <p><h6>Кадастровый номер:</h6> 771410339220005</p>
+        <p><h6>Тип:</h6> Памятник</p>
+        <p><h6>Площадь:</h6> 1273 кв.м</p>
+            </div>
+            <div class="col-md-6">
+              <p><h6>Дата регистрации:</h6> 10.11.2015</p>
+        <p><h6>Дата обновления информации:</h6> 17.12.2014</p>
+        <p><h6>Кадастровая стоимость:</h6> 39 690 052 руб.</p>
+        <p><h6>Разрешенное использование:</h6> ИСПОЛЬЗОВАНИЯ ТЕРРИТОРИИ ПОД ЭКСПЛУАТАЦИЮ СТАНЦИИ ТЕХНИЧЕСКОГО ОБСЛУЖИВАНИЯ АВТОМОБИЛЕЙ</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Закрыть</button>
+        <button type="button" class="btn btn-dark" data-dismiss="modal" href="editingcard.html">Редактировать</button>
+        <button type="button" class="btn btn-block" data-dismiss="modal">Удалить</button>
+      </div>
+    </div>
+  </div>
+  </div>   -->
+
+{% endblock %}

@@ -18,10 +18,32 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
+from django.views.generic import TemplateView
+from rest_framework.routers import SimpleRouter
+
+import real_estate_card.views
+import users.views
+from real_estate_card.views import EstateView
+from users.views import RegisterView
+
+router = SimpleRouter()
+
+router.register('api/estates', EstateView)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', real_estate_card.views.index, name='index'),
+    path('reestr/', real_estate_card.views.reestr, name='reestr'),
+    path('estates/update', real_estate_card.views.object_update, name='object_edit'),
+    path('estates/create', real_estate_card.views.objectcard, name='object_create'),
+    path('reg/', RegisterView.as_view(), name='register'),
+    path('support/', users.views.support, name='support'),
+    path('estate/1/', real_estate_card.views.estate_card, name='estate'),
 ]
+
+urlpatterns += router.urls
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

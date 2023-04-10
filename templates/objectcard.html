@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% block title %}Создать объект{% endblock %}
+
+{% block content %}
+        <!-- форма -->
+<div class="container">
+        <form>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">Округ</label>
+              <input type="text" class="form-control" id="inputEmail4" placeholder="">
+            </div>
+
+            <div class="form-group col-md-6">
+              <label for="inputPassword4">Район</label>
+              <input type="text" class="form-control" id="inputPassword4" placeholder="">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="form-group">
+              <label for="inputEmail4">Адрес</label>
+              <input type="text" class="form-control" id="inputEmail4" placeholder="Одинцовский р-н, г. Одинцово, гск ПАСК Луки, д.140">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">Кадастровый номер</label>
+              <input type="text" class="form-control" id="inputEmail4" placeholder="*********">
+            </div>
+
+            <div class="form-group col-md-6">
+              <label for="inputPassword4">Кадастровая стоимость</label>
+              <input type="number" class="form-control" id="inputPassword4" placeholder="руб.">
+            </div>
+
+          </div>
+          <div class="form-group">
+            <label for="inputAddress">Описание</label>
+            <input type="text" class="form-control" id="inputAddress" placeholder="Номер">
+          </div>
+
+          <div class="form-group">
+            <div class="form-group">
+              <label for="inputPassword4">Собственник</label>
+              <input type="text" class="form-control" id="inputPassword4" placeholder="ФИО/Наименование организации">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputCity">Тип</label>
+              <input type="text" class="form-control" id="Тип">
+            </div>
+
+            <div class="form-group col-md-4">
+              <label for="inputState">Состояние</label>
+              <select id="inputState" class="form-control">
+                <option selected>Выбрать</option>
+                <option>Новый</option>
+                <option>В работе</option>
+                <option>Завершен</option>
+              </select>
+            </div>
+
+            <div class="form-group col-md-2">
+              <label for="inputZip">Площадь</label>
+              <input type="number" class="form-control" id="inputZip" placeholder="кв.м">
+            </div>
+
+          </div>
+
+          <div class="form-group">
+            <div class="form-group">
+              <label for="inputPassword4">Фактический пользователь</label>
+              <input type="text" class="form-control" id="inputPassword4" placeholder="ФИО/Наименование организации">
+            </div>
+          </div>
+
+
+
+          <button type="submit" class="btn btn-outline-danger">Внести данные</button>
+        </form>
+        </div>
+    <br><br>
+{% endblock %}

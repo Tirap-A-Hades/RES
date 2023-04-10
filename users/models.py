@@ -22,6 +22,18 @@ class User(AbstractUser):
     def __str__(self):
         return f'{self.username}: {self.role}'
 
+    def get_real_estates(self) -> set[RealEstate]:
+        groups = self.get_groups()
+        real_estate_list = []
+        for group in groups:
+            real_estate_list.append(group.real_estates.values())
+
+        return set(real_estate_list)
+
+    def get_groups(self) -> list:
+        groups = Group.objects.filter(users=self)
+        return groups
+
     class Meta:
         verbose_name = "Пользователь"
         verbose_name_plural = "Пользователи"
@@ -32,7 +44,7 @@ class Group(models.Model):
     real_estates = models.ManyToManyField(RealEstate, verbose_name='объекты')
 
     def __str__(self):
-        return self.id
+        return str(self.id)
 
     class Meta:
         verbose_name = "Группа"

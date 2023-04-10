@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block title %}Регистрация{% endblock %}
+
+{% block content %}
+
+        <div class="container-fluid pt-5"></div>
+        <div class="container"><h3>Описание объекта</h3></div>
+        <div class="container-fluid pt-5"></div>
+        
+<div class="container">
+  <div class="row">
+        <div class="col-md-4">
+          <table class="table">
+            <tbody>
+              <tr>
+                <th>Адрес:</th>
+                <th>город Москва, с/о Новоивановский, д. Сколково, уч. 25-Л</th>
+              </tr>
+              <tr>
+                <th>Кадастровый номер:</th>
+                <th>50:20:0020106:567</th>
+              </tr>
+              <tr>
+                <th>Тип:</th>
+                <th>Земельный участок</th>
+              </tr>
+              <tr>
+                <th>Площадь:</th>
+                <th>482.00 кв. м</th>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-md-4">
+          <table class="table">
+            <tbody>
+              <tr>
+                <th>Разрешенное использование:</th>
+                <th>Для индивидуальной жилой застройки</th>
+              </tr>
+              <tr>
+                <th>Дата регистрации:</th>
+                <th>10.11.2015</th>
+              </tr>
+              <tr>
+                <th>Дата обновления информации:</th>
+                <th>09.04.2023</th>
+              </tr>
+              <tr>
+                <th>Кадастровая стоимость:</th>
+                <th>3 526 273.44 руб.</th>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-md-4">
+          <img class="img-fluid" src="obj1.jpg">
+        </div>
+        </div>
+      </div>
+
+      
+      <div class="container">
+        <a type="button" class="btn btn-danger col-md-2" href="reestr.html">Назад</a>
+        <a type="button" class="btn btn-dark col-md-2" href="editingcard.html">Редактировать</a>
+        <a type="button" class="btn btn-outline-primary col-md-2" href="#">Удалить</a>
+      </div>
+<br><br>
+{% endblock %}
